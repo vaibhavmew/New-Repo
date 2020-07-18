@@ -2,15 +2,10 @@
 
 1. User And Admin Login based on Passport Authentication.
 2. Create a New Account using Admin.
-
 3. Send Beneficiary Requests.
-
 4. Transfer Funds.
-
 5. Get Account Summary.
-
 6. Account Details.
-
 7. Last Login Information.
 
 
