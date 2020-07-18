@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/dashboard">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/summary">Statement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/add">Add Beneficiary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/requests">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/transfer">Transfer Funds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/profile">Profile</a>
+        </li>
+      </ul>
+      <a class="btn btn-primary" href="/users/logout" role="button">Logout</a>
+    </div>
+  </nav>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Narration</th>
+        <th scope="col">Withdraw (Rs.)</th>
+        <th scope="col">Deposit (Rs.)</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Closing Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% x = initial %>
+    <% users.forEach(function(item) { %>
+      <tr class="table-active">
+        <% deposit='' %>
+        <% withdraw='' %>
+        <% if(id == item.sender) {%>
+          <% x-=item.amount %>
+          <% withdraw = item.amount %>
+          <% } else {%>
+          <% x+=item.amount %>
+          <% deposit = item.amount }%>
+        <td><%= item.date.toDateString() %></td>
+        <td><%= item.details %></td>
+        <td><%= withdraw %></td>
+        <td><%= deposit %></td>
+        <td>Rs. <%= item.amount %></td>
+        <td>Rs. <%= x %></td>
+      </tr>
+    <% }) %>
+    </tbody>  
+   </table>

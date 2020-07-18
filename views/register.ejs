@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/admin/dash">Admin</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="/admin/register">Add User</a>
+      </li>
+    </ul>
+    <a class="btn btn-primary" href="/admin/logout" role="button">Logout</a>
+  </div>
+</nav>
+
+<div class="row mt-4">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <h3 class="text-center mb-3">
+         Register
+      </h3>
+      <% include ./partials/messages %>
+      <form action="/admin/register" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Balance</label>
+          <input
+            type="number"
+            id="balance"
+            name="balance"
+            class="form-control"
+            placeholder="Enter Balance"
+            value="<%= typeof balance != 'undefined' ? balance : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="name">Account No</label>
+          <input
+            type="number"
+            id="account"
+            name="account"
+            class="form-control"
+            placeholder="Enter Account No"
+            value="<%= typeof balance != 'undefined' ? balance : '' %>"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>"
+          />
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

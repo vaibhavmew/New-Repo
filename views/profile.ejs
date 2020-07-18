@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/dashboard">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/summary">Statement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/add">Add Beneficiary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/requests">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/transfer">Transfer Funds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/profile">Profile</a>
+        </li>
+      </ul>
+      <a class="btn btn-primary" href="/users/logout" role="button">Logout</a>
+    </div>
+  </nav>
+
+
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body">
+        <h1 class="text-center mb-3">
+            Profile
+        </h1>
+        <% users.forEach(function(item) { %>
+            <p> Name : <%= item.name %></p>
+            <p> Email : <%= item.email %></p>
+            <p> Account No : <%= item.account %></p>
+            <p> Balance : <%= item.balance %></p>
+            <p> Created On : <%= item.date.toDateString() %></p>
+          <% }) %>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/users/dashboard">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/summary">Statement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/add">Add Beneficiary</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/requests">Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/transfer">Transfer Funds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/profile">Profile</a>
+        </li>
+      </ul>
+      <a class="btn btn-primary" href="/users/logout" role="button">Logout</a>
+    </div>
+  </nav>
+  
+  <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+          <h1 class="text-center mb-3">
+          Transfer Funds
+          </h1>
+          <% include ./partials/messages %>
+          <form action="/users/verify" method="POST">
+            <div class="form-group">
+                <label for="receiver">Receiver Account No</label>
+                    <select class="form-control" id="receiver" name="receiver">
+                        <% users.forEach(function(item) { %>
+                        <option><%= item.receiver %></option>
+                        <% }) %>
+                    </select>
+            </div>
+            <div class="form-group">
+              <label for="details">Details</label>
+              <input
+                type="String"
+                id="details"
+                name="details"
+                class="form-control"
+                placeholder=""
+              />
+            </div>
+            <div class="form-group">
+              <label for="amount">Enter Amount</label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                class="form-control"
+                placeholder=""
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Transfer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  
