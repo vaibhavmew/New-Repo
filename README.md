@@ -1,7 +1,7 @@
 # Banking System made using Express, Mongoose, NodeJS And EJS
 
-User And Admin Login based on Passport Authentication.
-Create a New Account using Admin.
+1.User And Admin Login based on Passport Authentication.
+2.Create a New Account using Admin.
 Send Beneficiary Requests.
 Transfer Funds.
 Get Account Summary.
