@@ -1,6 +1,12 @@
-# Node.js & Passport Login
+# Banking System made using Express, Mongoose, NodeJS And EJS
 
-This is a user login and registration app using Node.js, Express, Passport, Mongoose, EJS and some other packages.
+User And Admin Login based on Passport Authentication.
+Create a New Account using Admin.
+Send Beneficiary Requests.
+Transfer Funds.
+Get Account Summary.
+Account Details.
+Last Login Information.
 
 ### Version: 2.0.0
 
