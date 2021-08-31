@@ -13,6 +13,7 @@ jobs:
       name: Sync repo to branch
       with:
         source_repo: "vaibhavmew/Banking-System"
-        source_branch: master
-        destination_branch: repo-sync
+        source_branch: "master"
+        destination_repo: "vaibhavmew/New-Repo"
+        destination_branch: "repo-sync"
         github_token: ${{ secrets.GITHUB_TOKEN }}
