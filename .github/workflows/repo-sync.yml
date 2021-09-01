@@ -17,3 +17,9 @@ jobs:
         source_branch: master
         destination_branch: repo-sync
         github_token: ${{ secrets.TOKEN }}
+    - uses: repo-sync/pull-request@v2
+      name: Create pull request
+      with:
+        source_branch: repo-sync
+        destination_branch: master
+        github_token: ${{ secrets.TOKEN }}
