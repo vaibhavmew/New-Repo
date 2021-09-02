@@ -1,0 +1,12 @@
+on: push
+jobs:
+  git-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: git-sync
+        uses: wei/git-sync@v3
+        with:
+          source_repo: vaibhavmew/Banking-System
+          source_branch: master
+          destination_repo: vaibhavmew/New-Repo
+          destination_branch: master
